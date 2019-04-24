@@ -1,9 +1,8 @@
 .box {
 	width: 100px;
 	height: 100px;
-	background: blue;
-
-	margin: 5px;
+	background: lightblue;
+	margin: 10px;
 }
 
 .column {
@@ -12,12 +11,7 @@
 
 h1 {
 	text-align: center;
-}
-
-.green {
-	border-style: solid;
-	border-color: green;
-	border-width: 5px;
+	padding: 30px;
 }
 
 button {

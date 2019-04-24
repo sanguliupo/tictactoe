@@ -15,9 +15,7 @@ for (let i = 0; i < 9; i++) {
 			let j = 0;
 			while (j < 9) {
 				if (map[j] !== undefined) {
-					setTimeout(function() {
-						box[j].firstElementChild.innerHTML = 'O';
-					}, 1500);
+					box[j].firstElementChild.innerHTML = 'O';
 					delete map[j];
 					break;
 				} else {
