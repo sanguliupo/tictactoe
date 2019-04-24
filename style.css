@@ -19,3 +19,8 @@ h1 {
 	border-color: green;
 	border-width: 5px;
 }
+
+button {
+	font-size: 20px;
+	margin: 15px;
+}
