@@ -1,28 +1,44 @@
 let box = document.getElementsByClassName('box');
 let count = 0;
 let map = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-const data = [['', '', ''], ['', '', ''], ['', '', '']];
+// const data = [['', '', ''], ['', '', ''], ['', '', '']];
 //iterate data and generate the div for <div class="box"><h1 id="box1"></h1></div>
 // if it's '', then initial state, empty
 // if computer put, then O
 // if computer put, then X
 
+function sleep(milliseconds) {
+	var start = new Date().getTime();
+	for (var i = 0; i < 1e7; i++) {
+		if (new Date().getTime() - start > milliseconds) {
+			break;
+		}
+	}
+}
+
 for (let i = 0; i < 9; i++) {
 	box[i].addEventListener('click', function() {
-		if (count % 2 === 0 && box[i].firstElementChild.innerHTML === '') {
-			box[i].firstElementChild.innerHTML = 'X';
+		if (count % 2 === 0 && box[i].firstElementChild.textContent === '') {
+			box[i].firstElementChild.textContent = 'X';
 			delete map[i];
-			let j = 0;
-			while (j < 9) {
-				if (map[j] !== undefined) {
-					box[j].firstElementChild.innerHTML = 'O';
-					delete map[j];
-					break;
-				} else {
-					j++;
+
+			count++;
+			announceWin();
+		}
+		if (count % 2 === 1) {
+			setTimeout(function() {
+				let j = 0;
+				while (j < 9) {
+					if (map[j] !== undefined) {
+						box[j].firstElementChild.textContent = 'O';
+						delete map[j];
+						count++;
+						break;
+					} else {
+						j++;
+					}
 				}
-			}
-			count += 2;
+			}, 1200);
 			announceWin();
 		}
 	});
