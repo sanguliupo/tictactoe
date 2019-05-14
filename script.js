@@ -33,13 +33,13 @@ for (let i = 0; i < 9; i++) {
 						box[j].firstElementChild.textContent = 'O';
 						delete map[j];
 						count++;
+						announceWin();
 						break;
 					} else {
 						j++;
 					}
 				}
 			}, 1200);
-			announceWin();
 		}
 	});
 }
